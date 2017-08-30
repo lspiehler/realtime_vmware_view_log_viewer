@@ -1,0 +1,35 @@
+{
+  "name": "realtime_vmware_view_log_viewer",
+  "version": "0.0.0",
+  "description": "Node.js/Mongo Realtime Log Viewer for VMware Horizon View",
+  "main": "index.js",
+  "dependencies": {
+    "express": "~4.14.1",
+    "mongodb": "~2.2.23",
+    "socket.io": "~1.7.2",
+    "body-parser": "~1.16.1",
+    "syslogd": "~1.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lspiehler/realtime_vmware_view_log_viewer.git"
+  },
+  "keywords": [
+    "VMware",
+    "Horizon",
+    "View",
+    "Realtime",
+    "Log",
+    "Syslog",
+    "Mongo"
+  ],
+  "author": "Lyas Spiehler",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/lspiehler/realtime_vmware_view_log_viewer/issues"
+  }
+}

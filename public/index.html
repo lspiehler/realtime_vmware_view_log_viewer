@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<style>
+			.panel {
+				margin: 0 !important; 
+				padding:0 !important;
+			}
+			.tooltip-table-column {
+				text-align: left;
+			}
+			.popover {
+				max-width: 100% ! important;
+				width: 500px ! important;
+			}
+			#previous {
+				display: none;
+			}
+			#next {
+				display: none;
+			}
+			#previousbottom {
+				display: none;
+			}
+			#nextbottom {
+				display: none;
+			}
+			.AUDIT_FAIL {
+				background-color: #ffe6e6 ! important;
+			}
+			.WARNING {
+				background-color: #ffffe6 ! important;
+			}
+		</style>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.js"></script>
+	</head>
+	<body>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2">
+				<div class="row">
+					<div class="col-md-6 text-center">
+						<select id="searchfilterselect">
+							<option value="0">Select a Search Filter...</option>
+							<option value="UserDisplayName">Username</option>
+							<option value="MachineName">Machine Name</option>
+							<option value="EventType">Event Type</option>
+							<option value="Body">Body</option>
+							<option value="Module">Module</option>
+							<option value="Severity">Severity</option>
+							<option value="PoolId">Pool ID</option>
+							<option value="DesktopId">Desktop ID</option>
+							<option value="ProtocolId">Protocol ID</option>
+							<option value="ClientIpAddress">Client IP Address</option>
+						</select>
+					</div>
+					<div class="col-md-6 text-center">
+						<select id="filteraction">
+							<option value="0">Filter Match Action...</option>
+							<option value="verbal">Verbal Alert On First Match</option>
+							<option value="repeatverbal">Verbal Alert On Every Match</option>
+						</select>
+					</div>
+				</div>
+				<p></p>
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 text">
+						<input id="searchfiltervalue" placeholder="Select a Search Filter..." readonly="true" id="username" type="text" rows="5" class="form-control" id="usr">
+					</div>
+				</div>
+				<p></p>
+				<div class="row">
+					<div class="col-md-6 text-right col-xs-6">
+						<button id="realtimebtn" type="button" class="btn btn-danger btn-lg">Stop Realtime</button>
+					</div>
+					<div class="col-md-6 text-left col-xs-6">
+						<button id="historicalbtn" type="button" class="btn btn-primary btn-lg">Load Historical</button>
+					</div>
+				</div>
+				<div class="row prev-next">
+					<p></p>
+					<div class="col-md-6 text-left col-xs-6">
+						<button id="previous" type="button" class="btn btn-warning btn-lg">Previous</button>
+					</div>
+					<div class="col-md-6 text-right col-xs-6">
+						<button id="next" type="button" class="btn btn-warning btn-lg">Next</button>
+					</div>
+				</div>
+				<div id="stats" class="row">
+					<p></p>
+					<div class="col-md-6 text-left col-xs-6">
+						Realtime Status: <span id="rtstat">Disconnected</span>
+					</div>
+					<div class="col-md-3 text-left col-xs-3">
+						Received: <span id="received">0</span>
+					</div>
+					<div class="col-md-3 text-left col-xs-3">
+						Filtered: <span id="filtered">0</span>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<p></p>
+		<div id="container" class="container">
+		</div>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2">		
+				<div class="row prev-next">
+					<p></p>
+					<div class="col-md-6 text-left col-xs-6">
+						<button id="previousbottom" type="button" class="btn btn-warning btn-lg">Previous</button>
+					</div>
+					<div class="col-md-6 text-right col-xs-6">
+						<button id="nextbottom" type="button" class="btn btn-warning btn-lg">Next</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="viewlog.js"></script>
+		<script src="main.js"></script>
+		<script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+	</body>
+</html>
